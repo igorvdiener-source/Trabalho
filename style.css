@@ -1,0 +1,511 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f5f5f5;
+  }
+
+
+  nav {
+    margin-top: 5px;
+  }
+  
+  ul {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+ul li a {
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  margin: 20px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  transition: .5s;
+  z-index: 1;
+}
+
+ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: scaleY(2);
+  opacity: 0;
+  transition: .3s;
+}
+
+ul li a::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transform: scale(0);
+  opacity: 0;
+  transition: .3s;
+  z-index: -1;
+}
+
+ul li a:hover {
+  color: #000000;
+}
+
+ul li a:hover::before {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+ul li a:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .container {
+    margin: 2rem 15%;
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease;
+  }
+  footer {
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 0rem;
+  }
+  img, video {
+    max-width: 100%;
+    margin: 0rem 0;
+    display: block;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .line {
+    display: flex;
+    align-items: flex-start; /* Alinha pelo topo */
+    gap: 2rem;
+  }
+  
+  .imagem-box {
+    flex: 0 0 30%;
+  }
+  
+  .imagem-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(107, 107, 107, 0.1);
+    padding: 5px;
+    background: #fff;
+  }
+  
+  .texto-box {
+    flex: 0 0 65%;
+    background: #fafafa;
+    padding: 1rem;
+    border: 1px solid #818181;
+    border-radius: 20px ;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    text-align: justify; /* Deixa o texto justificado */
+    
+  }
+  
+  
+  .home-fundo {
+    position: relative;
+    overflow: hidden;
+    height: 70vh; /* 90% da altura da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+
+.home-fundo::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 90%;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.tuacarreira.com%2Fwp-content%2Fuploads%2F2022%2F08%2Fcuiador-de-idosos.jpg&f=1&nofb=1&ipt=412dfec2071f5de68b153fa864b6d5e07c7f5bb8c1ca5515239c405440056999');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  animation: zoom 10s infinite alternate ease-in-out;
+}
+
+.home-fundo::after {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4); /* camada escura */
+  z-index: 2;
+}
+
+.conteudo-home {
+  position: relative;
+  z-index: 3;
+  padding: 2rem;
+}
+
+@keyframes zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+
+/* EFEITOS PARA O VIDEO INDEX_VIDEO */
+
+.video-container {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%; /* Agora 100% da altura da seção home-fundo */
+  overflow: hidden;
+  z-index: 1;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* Impede clique no vídeo */
+
+}
+
+header {
+    background-color: #ffffff; 
+    display: flex;
+    flex-direction: column;    
+    align-items: center;       
+    padding: 0; /* Zerado para a imagem encostar nas bordas de cima e de baixo */
+    margin: 0;
+    width: 100%;
+}
+
+header img {
+    width: auto;
+    height: 80px; /* Altere esse valor para a altura total que você deseja que o bloco branco tenha */
+    max-height: 100%; 
+    object-fit: contain; /* Garante que a logo se ajuste sem amassar ou distorcer */
+    margin: 0; /* Remove qualquer margem que empurre o bloco */
+    display: block;
+}
+
+header nav {
+    background-color: #0056b3; 
+    width: 100%;              
+    display: flex;
+    justify-content: center;   
+    margin: 0;
+}
+
+
+/* 6. Estilo para o botão que representa a página atual (classe "ativo" do seu HTML) */
+/*TEM Q CORRIGIR ESSE BAGULHO AQUI, DEIXAR CENTRALIZADO, JÁ ESTOU CORINGANDO HOJE*/
+/* Seção de redes sociais - contato */
+/*.social-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;   
+  padding: 2rem 0 1rem;
+  gap: 1rem;
+  width: 100%;               
+}
+
+ul.social-icons {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.social-icons li a {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  text-decoration: none;
+}
+
+ul.social-icons li a .icon {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+}
+
+ul.social-icons li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+ul.social-icons li a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: .5s;
+  z-index: 2;
+}
+
+ul.social-icons li a:hover::before { top: 0; }
+ul.social-icons li:nth-child(1) a::before { background: #3b5999; }
+ul.social-icons li:nth-child(2) a::before { background: #55acee; }
+ul.social-icons li:nth-child(3) a::before { background: #0077b5; }
+ul.social-icons li:nth-child(4) a::before { background: #dd4b39; }
+
+TIRAR O COMENTÁRIO DPS
+*/
+
+/* Configurações básicas do Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.subtitulo {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* O Grid da Galeria */
+.galeria-grid {
+  display: grid;
+  /* Cria colunas automáticas de no mínimo 280px. Se couber mais na tela, ele alinha lado a lado */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px; /* Espaçamento entre as fotos */
+}
+
+/* O cartão de cada foto */
+.galeria-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px; /* Cantos arredondados sutis */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de erguer o card ao passar o mouse */
+.galeria-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Configuração da imagem para não distorcer */
+.galeria-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* Faz a imagem cortar sem distorcer para preencher o espaço */
+  display: block;
+}
+
+/* Textos informativos abaixo/sobre a imagem */
+.galeria-info {
+  padding: 15px;
+}
+
+.galeria-info h3 {
+  margin: 0 0 5px 0;
+  font-family: 'SN Pro', sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.galeria-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=DM+Mono:wght@400;500&display=swap');
+
+
+/* Basic styling for the gallery */
+        body {
+            font-family: 'Cormorant Garamond', sans-serif;
+            margin: 0;
+            padding: 0;  
+            
+        }
+
+        h1 {
+            text-align: center;
+            padding: 40px;
+            margin: 0;
+            color: beige;
+            font-size: 3em;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .gallery img {
+            margin: 10px;
+            cursor: pointer;
+            max-width: 300px;
+            width: 50%;
+            height: 50%;
+          border-radius: 10px;
+        }
+
+        /* Lightbox styles */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        #lightbox img {
+            max-width: 80%;
+            max-height: 60vh;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+          border-radius: 10px;
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        /* Style for navigation buttons */
+        #prev-btn,
+        #next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #prev-btn {
+            left: 10px;
+        }
+
+        #next-btn {
+            right: 10px;
+        }
+
+        #prev-btn:hover,
+        #next-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Styles for thumbnails */
+        .thumbnail-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .thumbnail {
+            max-width: 50px;
+            width: 100px;
+            cursor: pointer;
+            margin-top: 40px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border: 2px solid #fff;
+            transition: opacity 0.3s;
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active-thumbnail {
+            opacity: 0.7;
+        }
+
+.gallery {
+  display: grid;
+  /* Cria colunas responsivas que se adaptam ao tamanho da tela */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px; /* Espaço igual entre todas as fotos */
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px; /* Força todas as imagens a terem a mesma altura */
+  object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer (ela corta os excessos) */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
